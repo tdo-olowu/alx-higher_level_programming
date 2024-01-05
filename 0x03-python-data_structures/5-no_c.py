@@ -4,4 +4,4 @@ def no_c(my_string):
     for ch in my_string:
         if (ord(ch) != ord('c')):
             py_only += ch
-    return (py_only)
+    return py_only

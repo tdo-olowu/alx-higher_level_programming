@@ -1,0 +1,12 @@
+is_palindrome:
+The naive solution is to acquire the length of the list and check if
+list[i] == list[len - 1 - i] for all i up to the midline (floor of half of len, I think).
+i.e. list[0] == list[L - 1]
+and list[1] == list[L - 2]
+until i reaches the middle value.
+This will require travelling through the list multiple times. Awful.
+
+What else can we do? I'm no mathematician.
+Naive solution - get the length of the list, then build an array of the head of the list.
+Build another array of the tail.
+Compare both arrays. Check if list[i] == list[len - 1 - i] for all i up to the middle.

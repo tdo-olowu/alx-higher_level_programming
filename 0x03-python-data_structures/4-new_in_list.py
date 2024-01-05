@@ -4,7 +4,7 @@ def new_lin_list(my_list, idx, element):
     cpy += my_list
     lngth = len(cpy)
     if ((idx >= lngth) or (idx < 0)):
-        return (cpy)
+        return cpy
     else:
         new_list = []
         for i in range(lngth):
@@ -12,4 +12,4 @@ def new_lin_list(my_list, idx, element):
                 cpy.append(element)
             else:
                 cpy.append(my_list[i])
-        return (cpy)
+        return cpy 
