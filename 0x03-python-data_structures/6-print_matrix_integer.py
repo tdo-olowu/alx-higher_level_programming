@@ -11,4 +11,4 @@ def print_matrix_integer(matrix=[[]]):
             if (c + 1 == column_count):
                 sep = '\n'
             item = row[c]
-            print("{}".format(item), end=sep)
+            print("{:d}".format(item), end=sep)
