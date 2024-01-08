@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-def new_lin_list(my_list, idx, element):
+def new_in_list(my_list, idx, element):
     cpy = []
-    cpy += my_list
-    lngth = len(cpy)
+    lngth = len(my_list)
     if ((idx >= lngth) or (idx < 0)):
+        cpy += my_list
         return cpy
     else:
-        new_list = []
         for i in range(lngth):
             if (i == idx):
                 cpy.append(element)
