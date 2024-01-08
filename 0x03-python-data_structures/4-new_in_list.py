@@ -12,4 +12,4 @@ def new_lin_list(my_list, idx, element):
                 cpy.append(element)
             else:
                 cpy.append(my_list[i])
-        return cpy 
+        return cpy
