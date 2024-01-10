@@ -11,6 +11,6 @@ def best_score(a_dictionary):
             key = a_keys[i]
             score = a_dictionary[key]
             if (best_score < score):
-                best_score = score 
+                best_score = score
                 best_key = key
         return best_key
