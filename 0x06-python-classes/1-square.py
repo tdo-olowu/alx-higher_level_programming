@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+"""lsasion askjdsa ksaj  asdilosalklsdnl alsknlsdanlsda
+"""
+
+
 class Square:
-    """if writing python code means tedious documentation...
+    """lln s squaln aslnsknds alskndslknsdl askjldnsknd elkne edlk
     """
     def __init__(self, size=0):
-        """then I think I wanna go back to C.
+        """lsnj wejlken eljkedk delknelk
         Args:
-            size (int):
+            size (int): sjkdsnkjdsnk
         """
         self.__size = size
