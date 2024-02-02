@@ -1,45 +1,50 @@
 #!/usr/bin/python3
-"""CODE DOCUMENTATION GOES HERE.
+"""matrix_divided: (M)U(int) -> (M)
+    existence issues - no matrix given, no div given
+    type issues - matrix or div is wrong type (incl None)
+    value issues - matrix is not all numbers or aligned, or div is 0
 """
 
 
 def matrix_divided(matrix, div):
-    """what problems could arise?
-    existence problems - no matrix given, no div given.
-    type problems - matrix is the wrong type (incl None), or
-    div is the wrong type.
-    matrix must be a list and div must be a number
-    value problems - matrix is not a proper matrix.
-        either it has wrong dimensions (not all rows same length) or
-        it has non-numerical entries.
-        div is not a non-zero number.
-    memory problems? Haha, this isn't C. Hopefully this won't be an issue.
-    """
+    """matrix_divided - a function to scale a matrix by 1/div
+        Return (list): list of lists
+        """
     new_matrix = []
     row = []
-    mat_type_error_msg = "matrix must be a list of lists"
+    div_type_error_msg = "div must be a number"
+    mat_type_error_msg = "matrix must be a matrix (list of lists) "
+    mat_type_error_msg += "of integers/floats"
+    row_misalign_msg = "Each row of the matrix must have the same size"
     prev_col_count = 0
 
-    if div is 0:
+    if (type(div) is not int) and (type(div) is not float):
+        raise TypeError(div_type_error_msg)
+    if div == 0:
         raise ZeroDivisionError("division by zero")
     if type(matrix) is not list:
         raise TypeError(mat_type_error_msg)
 
-    if type(matrix[0]) is list):
-        prev_col_count = len(matrix[0])
+    """who's to say matrix[0] exists?"""
+    if (len(matrix) < 1) or (type(matrix[0]) is not list):
+        raise TypeError(mat_type_error_msg)
+    prev_col_count = len(matrix[0])
+
     for r in range(len(matrix)):
         row = matrix[r]
+        """the order of these checks is important, cause of len"""
         if type(row) is not list:
             raise TypeError(mat_type_error_msg)
+        if (prev_col_count != len(row)):
+            raise TypeError(row_misalign_msg)
+
         for c in range(len(row)):
             tp = type(row[c])
-            if (tp is not int) or (tp is not float):
+            if (tp is not int) and (tp is not float):
                 raise TypeError(mat_type_error_msg)
-            row = list(map(lambda x:x/div, row[c]))
-            new_matrix.append(row)
+        row = list(map(lambda x: round(x/div, 2), row))
+        new_matrix.append(row)
 
-        if (prev_col_count != len(matrix[r]):
-                raise TypeError(mat_type_error_msg)
-        prev_col_count = len(matrix[r])
+        prev_col_count = len(row)
 
     return (new_matrix)

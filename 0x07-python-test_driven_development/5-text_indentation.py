@@ -9,11 +9,15 @@ def text_indentation(text):
     type - text is not a string
     """
     type_err_msg = "text must be a string"
-    if type(text) is not str:
+    if (type(text) is not str):
         raise TypeError(type_err_msg)
+    prev_ch = text[0]
     for ch in text:
-        if ch in [".", "?", ":"]:
-            print("\n\n", end="")
+        if prev_ch in [".", "?", ":"]:
+            print("\n")
+            if ch in [" ", "\t"]:
+                print("", end="")
         else:
-            print("{}".format(ch), end="")
-    print("\n", end="")
+            print(ch, end="")
+        prev_ch = ch
+    print("")
