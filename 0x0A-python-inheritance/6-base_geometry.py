@@ -6,4 +6,8 @@ will build everything else from here"""
 class BaseGeometry():
     """BaseGeometry is a class which models
     certain geometries"""
-    pass
+
+    def area(self):
+        """the area of the geometry.
+        Return: area"""
+        raise Exception("area() is not implemented")
