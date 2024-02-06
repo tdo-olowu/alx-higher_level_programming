@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""demonstration of how to append a string to the end of a 
+"""demonstration of how to append a string to the end of a
 text file in python."""
 
 
