@@ -10,15 +10,14 @@ class Square(Rect):
     """a square which inherits from the base Geo"""
     def __init__(self, size):
         """the initialiser"""
-        super().integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def __str__(self):
-        """print implementation"""
-        width = self.__size
-        height = width
-        return ("[Rectangle] {}/{}".format(width, height))
+        """string representation"""
+        s = self.__size
+        return ("[Square] {}/{}".format(s, s))
 
     def area(self):
-        """implementing area"""
+        """the area"""
         return (self.__size ** 2)
