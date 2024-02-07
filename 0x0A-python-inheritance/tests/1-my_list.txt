@@ -1,0 +1,8 @@
+MyList class doc, Inherits from list and has an extra method to sort list.
+
+>>> import sys
+>>> sys.path.append("..")
+>>> MyList = __import__("1-my_list").MyList
+>>> example = MyList([5, -4, 3, -2, 1, 0])
+>>> example.print_sorted()
+[-4, -2, 0, 1, 3, 5]
