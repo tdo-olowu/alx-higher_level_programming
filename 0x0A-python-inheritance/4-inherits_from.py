@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""inherits from 
+"""inherits from
 from
 """
+
 
 def inherits_from(obj, a_class):
     """
