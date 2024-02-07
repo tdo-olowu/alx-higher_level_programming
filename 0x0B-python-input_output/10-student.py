@@ -12,15 +12,15 @@ class Student():
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs = None):
+    def to_json(self, attrs=None):
         """Expresses a class in serialisable form
         Args:
             attrs (any): should have serialisable attrs
         Return:
             the serialisable string of the object
         """
-        if (attrs == None):
-            dct_repr = {"first_name": self.first_name, 
+        if (attrs is None):
+            dct_repr = {"first_name": self.first_name,
                         "last_name": self.last_name,
                         "age": self.age
                         }
