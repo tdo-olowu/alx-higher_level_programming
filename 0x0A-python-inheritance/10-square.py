@@ -12,7 +12,3 @@ class Square(Rect):
         """the initialiser"""
         self.__size = size
         super().__init__(size, size)
-
-    def area(self):
-        """implementing area"""
-        return (super().area())
