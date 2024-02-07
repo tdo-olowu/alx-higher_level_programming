@@ -4,10 +4,14 @@
 
 
 def class_to_json(obj):
-    """serailises a class as an obj.
+    """Expresses a class in serialisable form
     Args:
-        obj (any)
+        obj (any): should have serialisable attrs
     Return:
-        nothing
+        the serialisable string of the object?
     """
-    pass
+    dct = {}
+    objdct = obj.__dict__
+    for k, v in objdct.items():
+        dct[k] = v
+    return (dct)
