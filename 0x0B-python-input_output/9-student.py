@@ -13,5 +13,14 @@ class Student():
         self.age = age
 
     def to_json(self):
-        """dc"""
-        pass
+        """Expresses a class in serialisable form
+        Args:
+            obj (any): should have serialisable attrs
+        Return:
+            the serialisable string of the object
+        """
+        dct_repr = {"first_name": self.first_name,
+                    "last_name": self.last_name,
+                    "age": self.age
+                    }
+        return (dct_repr)
