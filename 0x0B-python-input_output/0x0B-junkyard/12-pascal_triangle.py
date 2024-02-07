@@ -27,7 +27,11 @@ def pascal_triangle(n):
                 row.append(1)
             else:
                 row.append(prev_row[c] + prev_row[c - 1])
+        print("Row {} {}".format(r, row))
         pascalz.append(row)
-        # prev_row = row[:]?
-        prev_row = row
+        # prev_row = row?
+        prev_row = row[:]
     return (pascalz)
+
+if __name__=="__main__":
+    pascal_triangle(10)
