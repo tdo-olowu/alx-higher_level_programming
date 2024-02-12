@@ -8,6 +8,8 @@ import sys
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
 base = __import__('base').Base
+
+
 class Rectangle(base):
     """
     class Rectangle:
@@ -44,6 +46,7 @@ class Rectangle(base):
 
     @property
     def width(self):
+        """getter for width"""
         return (self.__width)
 
     @width.setter
@@ -56,6 +59,7 @@ class Rectangle(base):
 
     @property
     def height(self):
+        """getter for height"""
         return (self.__height)
 
     @height.setter
@@ -68,6 +72,7 @@ class Rectangle(base):
 
     @property
     def x(self):
+        """getter for x"""
         return (self.__x)
 
     @x.setter
@@ -80,6 +85,7 @@ class Rectangle(base):
 
     @property
     def y(self):
+        """getter for y"""
         return (self.__y)
 
     @y.setter
