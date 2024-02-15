@@ -63,8 +63,8 @@ class Base():
         """
         if (json_string is None):
             return []
-        from json import loads
-        return (loads(json_string))
+        from json import loads, dumps
+        return (loads(dumps(json_string)))
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -87,3 +87,18 @@ class Base():
                     save_me.append(obj.to_dictionary())
                 s = Base.to_json_string(save_me)
                 dump(s, fobj)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """note that dictionary is merely kwargs in this context.
+        this class method returns an instance with all attributes
+        already set
+        """
+        pass
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances
+        filename is obtained from cls name.
+        """
+        pass
