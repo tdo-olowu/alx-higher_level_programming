@@ -36,3 +36,21 @@ class Square(rect):
         self.width = value
         self.height = value
         print(f"My size is {self.size}")
+
+    def update(self, *args, **kwargs):
+        """assigns attributes for the square object.
+            Args:
+                *args - a list of arguments, w/o keywords.
+                in order, it's id, size, x, y
+                **kwargs - a dictionary of arguments
+        """
+        attrs = ("id", "size", "x", "y")
+        if (args is not None) and (len(args) > 0):
+            for i in range(len(args)):
+                if (i >= len(attrs)):
+                    break
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
