@@ -13,7 +13,6 @@ class Square(rect):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """initializer"""
-        self.size = size
         super(Square, self).__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -27,11 +26,13 @@ class Square(rect):
 
     @property
     def size(self):
-        """getter for size"""
-        return (self.__size)
+        """I'm forbidden from directly creating a sz attribute
+        it's assumed that the width and height are equal"""
+        return (super().width)
 
     @size.setter
     def size(self, value):
         """setter for size"""
-        super().width(self, self.size)
-        super().height(self, self.size)
+        self.width = value
+        self.height = value
+        print(f"My size is {self.size}")
