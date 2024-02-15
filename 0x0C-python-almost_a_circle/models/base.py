@@ -24,3 +24,51 @@ class Base():
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """this function is callable via the class' name
+        Notice how it doesn't require the 'self' parameter.
+        Args:
+            list_dictionaries (list) - a list of dictionaries
+        Return:
+            the json string representation of list_dictionaries
+        """
+        empty = "[]"
+        if (list_dictionaries is None):
+            return empty
+        if (len(list_dictionaries) is None):
+            return empty
+        jsonrepr = "["
+        dct_count = len(list_dictionaries)
+        for i in range(dct_count):
+            if (i == dct_count - 1):
+                sep = ""
+            else:
+                sep = ", "
+            jsonrepr += str(list_dictionaries[i])
+            jsonrepr += sep
+        jsonrepr += "]"
+        return (jsonrepr)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of the list_objs
+        to a file. BEWARE!!! The existing file <classname>.json
+        will be overwritten!
+        Args:
+            cls (obj) - a class
+            list_objs (list) - a list of instances which inherit
+            from Base e.g. list of Rectangle, or Squre instances.
+        """
+        import json
+        save_me = []
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, 'w', encoding="utf-8") as fobj:
+            if (list_objs is None):
+                json.dump([], fobj)
+            else:
+                for obj in list_objs:
+                    save_me.append(obj.to_dictionary())
+                s = Base.to_json_string(save_me)
+                json.dump(s, fobj)

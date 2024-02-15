@@ -127,3 +127,18 @@ class Rectangle(base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """This returns the dictionary representation of the obj,
+        for the sake of serialising in json format.
+        Return:
+            the serialisable dictionary of the object.
+        """
+        dct_repr = {}
+        sought_attr = ("id", "width", "height", "x", "y")
+        for attr in sought_attr:
+            if hasattr(self, attr):
+                dct_repr[attr] = getattr(self, attr)
+            else:
+                dct_repr[attr] = None
+        return (dct_repr)

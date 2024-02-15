@@ -35,7 +35,6 @@ class Square(rect):
         """setter for size"""
         self.width = value
         self.height = value
-        print(f"My size is {self.size}")
 
     def update(self, *args, **kwargs):
         """assigns attributes for the square object.
@@ -54,3 +53,18 @@ class Square(rect):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """This returns the dictionary representation of the obj,
+        for the sake of serialising in json format.
+        Return:
+            the serialisable dictionary representation of the obj
+        """
+        dct_repr = {}
+        sought_attr = ("id", "size", "x", "y")
+        for attr in sought_attr:
+            if hasattr(self, attr):
+                dct_repr[attr] = getattr(self, attr)
+            else:
+                dct_repr[attr] = None
+        return (dct_repr)
