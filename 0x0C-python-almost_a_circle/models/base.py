@@ -51,6 +51,21 @@ class Base():
         jsonrepr += "]"
         return (jsonrepr)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """given a json string repr of a list of dictionaries...
+        returns an actual list of these dictionaries.
+        interesting.
+            Args:
+                json_string (str) - string of dicts
+            Return (list):
+                list of what the str represents
+        """
+        if (json_string is None):
+            return []
+        from json import loads
+        return (loads(json_string))
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of the list_objs
@@ -61,14 +76,14 @@ class Base():
             list_objs (list) - a list of instances which inherit
             from Base e.g. list of Rectangle, or Squre instances.
         """
-        import json
+        from json import dump
         save_me = []
         filename = "{}.json".format(cls.__name__)
         with open(filename, 'w', encoding="utf-8") as fobj:
             if (list_objs is None):
-                json.dump([], fobj)
+                dump([], fobj)
             else:
                 for obj in list_objs:
                     save_me.append(obj.to_dictionary())
                 s = Base.to_json_string(save_me)
-                json.dump(s, fobj)
+                dump(s, fobj)
