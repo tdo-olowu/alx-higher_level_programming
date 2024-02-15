@@ -8,6 +8,8 @@ import sys
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
 rect = __import__('rectangle').Rectangle
+
+
 class Square(rect):
     """models a Square digitally.
     """

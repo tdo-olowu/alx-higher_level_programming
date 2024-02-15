@@ -90,15 +90,36 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        """note that dictionary is merely kwargs in this context.
-        this class method returns an instance with all attributes
-        already set
+        """this class method returns an instance with all attributes
+        already set.
+        Args:
+            dictionary (kwargs) - intended for the update methods of the
+            Square and Rectangle classes respectively.
+        Return:
+            instance with preset attributes, as specified in dictionary.
         """
-        pass
+        dummy = None
+        if (cls.__name__ == "Square"):
+            dummy = cls(1)
+        elif (cls.__name__ == "Rectangle"):
+            dummy = cls(1, 1)
+        if (dummy is not None):
+            dummy.update(**dictionary)
+        return (dummy)
 
     @classmethod
     def load_from_file(cls):
         """returns a list of instances
         filename is obtained from cls name.
         """
-        pass
+        from json import load, dumps
+        filename = cls.__name__ + ".json"
+        try:
+            instances = []
+            with open(filename, 'r', encoding="utf-8") as fobj:
+                instance_dcts = load(fobj)
+                for dct in instance_dcts:
+                    instances.append(Base.create())
+                return instances
+        except FileNotFoundError:
+            return []

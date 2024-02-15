@@ -118,7 +118,7 @@ class Rectangle(base):
         3rd should be height, 4th should be x
         5th should be y"""
         attrs = ("id", "width", "height", "x", "y")
-        if (args is not None) and (len(args) > 0):
+        if ((args is not None) and (len(args) > 0)):
             for i in range(len(args)):
                 if (i >= len(attrs)):
                     break
