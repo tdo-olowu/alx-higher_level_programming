@@ -2,4 +2,4 @@
 --	hbtn_0c_0 in the MySQL server.
 -- prints all fields
 SELECT *
-FROM hbtn_0c_0.first_table;
+FROM first_table;
