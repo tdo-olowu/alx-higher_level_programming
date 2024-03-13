@@ -1,0 +1,3 @@
+-- displays scores >= 10
+-- lists scores from second_table
+-- score and name, ordered from best to worst

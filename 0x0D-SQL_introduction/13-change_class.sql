@@ -1,0 +1,1 @@
+-- removes all records with score <= 5 in the second_table

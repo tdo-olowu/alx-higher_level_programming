@@ -1,0 +1,1 @@
+-- updates Bob's score via name in second_table
