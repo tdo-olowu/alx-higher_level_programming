@@ -1,0 +1,3 @@
+To create a user, the following pseudo-syntax is what you need:
+	CREATE USER <user_id> [IDENTIFIED WITH psword BY 'password'];
+the <user_id> is of the form 'username'@'host'
