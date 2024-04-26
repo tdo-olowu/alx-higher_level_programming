@@ -1,8 +1,5 @@
 #!/bin/bash
-
-if [ $# -ne 1 ]; then
-    exit 1
-fi
+# script doing x
 
 url=$1
 response=$(curl -s -o /dev/null -w "%{http_code}" "$url")

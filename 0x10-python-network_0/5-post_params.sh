@@ -1,11 +1,6 @@
 #!/bin/bash
+# script doing h
 
-# Check if URL is provided as argument
-if [ $# -ne 1 ]; then
-    exit 1
-fi
-
-# Get the URL from the argument
 url=$1
 
 # Define the POST data
@@ -17,4 +12,3 @@ response=$(curl -s -X POST -d "email=$email&subject=$subject" "$url")
 
 # Display the body of the response
 echo "$response"
-

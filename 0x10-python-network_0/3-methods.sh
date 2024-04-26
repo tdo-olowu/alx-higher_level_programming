@@ -1,9 +1,5 @@
 #!/bin/bash
-
-# Check if URL is provided as argument
-if [ $# -ne 1 ]; then
-    exit 1
-fi
+# script doing y
 
 # Get the URL from the argument
 url=$1
