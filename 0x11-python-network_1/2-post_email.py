@@ -13,7 +13,6 @@ if __name__ == "__main__":
     email = sys.argv[2]
     params = uparse.urlencode({'email': email}).encode("utf-8")
     with uquest.urlopen(url, data=params) as rsvp:
-        rsvp.post(url, data=params)
         response = rsvp.read()
         msg = response.decode("utf-8")
         print("Your email is: {}".format(msg))
